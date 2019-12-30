@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环形图</title>
+       <script type="text/javascript" src="../static/js/jquery.js"></script>
+     <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+</head>
+<body>
+<div id="mian" style="height:600px;width: 800px;"></div>
+<script type="text/javascript">
+    // 定位画布
+    var mychart=echarts.init(document.getElementById("mian"))
+    //配置项
+    var option = {
+        title:{
+            text:"环形图"
+        },
+        tooltip:{},
+        legend:{
+            data:['内衣','袜子','衬衫','羊毛衫','羽绒服']
+        },
+        series:[
+            {name:'销量',
+            type:'pie',
+                radius:['55%','70%'],//半径大小
+                //center:['50%','50%'],//圆心位置
+                label:{
+                normal:{
+                    show:false,//取消原来显示
+                    position:'center',//在中间显示
+                },
+                    emphasis:{
+                    show:true,//显示
+                        textStyle:{//字体样式
+                        fontSize:"30",
+                            fontWeight:"bold",//加粗
+                        }
+                    },
+                },
+                data:[
+                    {name:'内衣',value:335},
+                    {name:'袜子',value:200},
+                    {name:'衬衫',value:180},
+                    {name:'羊毛衫',value:290},
+                    {name:'羽绒服',value:360},
+                ],
+                //roseType:'radius'
+            }
+        ]
+    };
+     mychart.setOption(option)
+</script>
+
+</body>
+</html>

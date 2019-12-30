@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柱形图</title>
+       <script type="text/javascript" src="../static/js/jquery.js"></script>
+     <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+</head>
+<body>
+<div id="mian" style="height:600px;width: 800px;"></div>
+<script type="text/javascript">
+    // 定位画布
+    var mychart=echarts.init(document.getElementById("mian"))
+    //配置项
+    var option = {
+        title:{
+            text:"实例"
+        },
+        tooltip:{},
+        legend:{
+            data:['销量']
+        },
+        xAxis:{
+            data:['内衣','袜子','衬衫','羊毛衫','羽绒服']
+        },
+        yAxis:{},
+        series:[
+            {name:'销量',
+            type:'bar',
+                data:[5,20,10,20,50]
+            }
+        ]
+    };
+     mychart.setOption(option)
+</script>
+
+</body>
+</html>
